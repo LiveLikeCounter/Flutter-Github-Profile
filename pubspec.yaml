@@ -1,0 +1,55 @@
+name: Github_Profile
+description: GitHub Profile.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.3.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  flutter_svg: ^0.17.3+1
+  http: any
+  shared_preferences: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: any
+
+flutter_icons:
+  # flutter pub run flutter_launcher_icons:main
+  android: "launcher_icon" 
+  ios: true
+  image_path: "assets/images/AppIcon.png"
+  adaptive_icon_background: "#ffffff"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+
+  fonts:
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/Muli/Muli-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Muli/Muli-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Muli/Muli-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Muli/Muli-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Muli/Muli-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Muli/Muli-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Muli/Muli-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Muli/Muli-Black.ttf
+          weight: 900
