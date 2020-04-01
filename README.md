@@ -1,9 +1,8 @@
-# 🎁 Flutter NAME App
+# Flutter Github Profile
 
-What?
-Why?
-How?
-When?
+With this Flutter app, based on my own build design which you can download for free on [Uplabs](https://www.uplabs.com/posts/github-redesign-profile-page), you can find any GitHub-profile to show in this app. Which shows some summery about the profile, and all its repo's.
+
+The Flutter App uses the GitHub REST-Api to search and fetch the users and profile-information. The basic API has a limited useage, but can easaly extended by using a GitHub API-Key which can be generated in your GitHub-setting. Please, see the (http.dart)[https://github.com/LiveLikeCounter/Flutter-Github-Profile/blob/c38c0096e3fdd336fee024bba03e63cb49ff6bec/lib/core/http.dart#L8] file for more information.
 
 Table of content:
   * [Introduction](#Introduction)
@@ -29,7 +28,7 @@ Table of content:
 
 | Version |       Date         |             Comments             |
 | ------- | ------------------ | -------------------------------- |
-| 1.0     | ~Month 2012        | Initial release                  |
+| 1.0     | ~April 2020        | Initial release                  |
 
 
 ## Contributing
