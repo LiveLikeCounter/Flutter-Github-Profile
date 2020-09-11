@@ -31,109 +31,90 @@ class UserProfile extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     Container(
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: <Widget>[
-                                Text(
-                                    snapshot.data['name'] != null
-                                        ? snapshot.data['name']
-                                        : '',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: CustomTextStyles.ProfileLargeText),
-                                Text(
-                                    snapshot.data['login'] != null
-                                        ? snapshot.data['login']
-                                        : '',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: CustomTextStyles.ProfileNormalText),
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 5),
-                          GestureDetector(
-                            onTap: () {
-                              LocalStorage.deleteValue('GitHubUserProfile');
-                              Navigator.pushReplacementNamed(
-                                  context, FindProfileScreen.routeName);
-                            },
-                            child: Stack(
-                              alignment: Alignment.topRight,
-                              children: <Widget>[
-                                Container(
-                                  width: 65,
-                                  child: Image.network(
-                                    snapshot.data['avatar_url'] ?? '',
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Container(
-                                    width: 30,
-                                    height: 30,
-                                    child: Icon(
-                                      Icons.highlight_off,
-                                      color: CustomColors.BlueDark,
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
+                      child: GestureDetector(
+                        onTap: () {
+                          LocalStorage.deleteValue('GitHubUserProfile');
+                          Navigator.pushReplacementNamed(
+                              context, FindProfileScreen.routeName);
+                        },
+                        child: Icon(
+                          Icons.chevron_left,
+                          size: 20,
+                        ),
                       ),
                     ),
-                    SizedBox(width: 10),
                     Container(
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              SvgPicture.asset(
-                                  'assets/images/profile-icon-company.svg'),
-                              SizedBox(width: 5),
-                              Flexible(
-                                child: Text(snapshot.data['company'] ?? '',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: CustomTextStyles.ProfileNormalText),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 5),
-                          Row(
-                            children: <Widget>[
-                              SvgPicture.asset(
-                                  'assets/images/profile-icon-location.svg'),
-                              SizedBox(width: 5),
-                              Flexible(
-                                child: Text(snapshot.data['location'] ?? '',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: CustomTextStyles.ProfileNormalText),
-                              )
-                            ],
-                          ),
-                          SizedBox(height: 5),
-                          Row(
-                            children: <Widget>[
-                              SvgPicture.asset(
-                                  'assets/images/profile-icon-website.svg'),
-                              SizedBox(width: 5),
-                              Flexible(
-                                child: Text(snapshot.data['blog'] ?? '',
-                                    overflow: TextOverflow.ellipsis,
-                                    style: CustomTextStyles.ProfileNormalText),
-                              )
-                            ],
-                          ),
-                        ],
+                      width: 65,
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: Image.network(
+                        snapshot.data['avatar_url'] ?? '',
                       ),
                     ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                            snapshot.data['name'] != null
+                                ? snapshot.data['name']
+                                : '',
+                            overflow: TextOverflow.ellipsis,
+                            style: CustomTextStyles.ProfileLargeText),
+                        Text(
+                            snapshot.data['login'] != null
+                                ? snapshot.data['login']
+                                : '',
+                            overflow: TextOverflow.ellipsis,
+                            style: CustomTextStyles.ProfileNormalText),
+                      ],
+                    ),
+
+                    // SizedBox(width: 10),
+                    // Container(
+                    //   width: MediaQuery.of(context).size.width / 2.3,
+                    //   child: Column(
+                    //     mainAxisAlignment: MainAxisAlignment.center,
+                    //     children: <Widget>[
+                    //       Row(
+                    //         children: <Widget>[
+                    //           SvgPicture.asset(
+                    //               'assets/images/profile-icon-company.svg'),
+                    //           SizedBox(width: 5),
+                    //           Flexible(
+                    //             child: Text(snapshot.data['company'] ?? '',
+                    //                 overflow: TextOverflow.ellipsis,
+                    //                 style: CustomTextStyles.ProfileNormalText),
+                    //           )
+                    //         ],
+                    //       ),
+                    //       SizedBox(height: 5),
+                    //       Row(
+                    //         children: <Widget>[
+                    //           SvgPicture.asset(
+                    //               'assets/images/profile-icon-location.svg'),
+                    //           SizedBox(width: 5),
+                    //           Flexible(
+                    //             child: Text(snapshot.data['location'] ?? '',
+                    //                 overflow: TextOverflow.ellipsis,
+                    //                 style: CustomTextStyles.ProfileNormalText),
+                    //           )
+                    //         ],
+                    //       ),
+                    //       SizedBox(height: 5),
+                    //       Row(
+                    //         children: <Widget>[
+                    //           SvgPicture.asset(
+                    //               'assets/images/profile-icon-website.svg'),
+                    //           SizedBox(width: 5),
+                    //           Flexible(
+                    //             child: Text(snapshot.data['blog'] ?? '',
+                    //                 overflow: TextOverflow.ellipsis,
+                    //                 style: CustomTextStyles.ProfileNormalText),
+                    //           )
+                    //         ],
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                   ],
                 ),
                 SizedBox(height: 20),
