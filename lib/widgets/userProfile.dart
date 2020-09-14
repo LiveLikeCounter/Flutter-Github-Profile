@@ -39,7 +39,8 @@ class UserProfile extends StatelessWidget {
                         },
                         child: Icon(
                           Icons.chevron_left,
-                          size: 20,
+                          size: 40,
+                          color: CustomColors.BlueDark,
                         ),
                       ),
                     ),
@@ -67,7 +68,6 @@ class UserProfile extends StatelessWidget {
                             style: CustomTextStyles.ProfileNormalText),
                       ],
                     ),
-
                     // SizedBox(width: 10),
                     // Container(
                     //   width: MediaQuery.of(context).size.width / 2.3,
